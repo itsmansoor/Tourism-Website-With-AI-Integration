@@ -68,8 +68,9 @@ const Package = () => {
   const getPackageData = useCallback(async () => {
     try {
       setLoading(true);
-
-      const res = await fetch(`/api/package/get-package-data/${params?.id}`);
+      const API_URL = import.meta.env.SERVER_URL;
+  "https://tourism-ai-backend.onrender.com";
+      const res = await fetch(`${API_URL}/api/package/get-package-data/${params?.id}`);
 
       const data = await res.json();
 
